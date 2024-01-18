@@ -1,0 +1,23 @@
+.cripto-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.titulo {
+  justify-content: center;
+
+  display: flex;
+  margin: 20px;
+}
+h1 {
+  font-weight: bold;
+  text-align: center;
+  background-color: crimson;
+  color: white;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+
+  width: 50%;
+}
