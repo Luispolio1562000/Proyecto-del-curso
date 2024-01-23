@@ -1,3 +1,24 @@
-.main menu .a{
-    color: white;
+.main-menu {
+  display: flex;
+  flex-direction: row; /* Mostrar el menú en una fila */
+  justify-content: space-around; /* Distribuir los elementos de forma equitativa en el espacio disponible */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-menu li {
+  margin: 0 10px;
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+.active {
+  color: #fff;
+  background-color: crimson;
+  padding: 5px 10px;
+  border-radius: 5px;
 }

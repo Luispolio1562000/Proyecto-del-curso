@@ -1,39 +1,20 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import "./Cuadricula.css";
 import CardList from "./Cripto";
 import "./Cripto.css";
-import axios from "axios";
+import usePetition from "./hooks/usePetition";
 
 function Cuadricula() {
-  const API_URL = import.meta.env.VITE_API_URL;
-  const [criptomonedas, setcriptomonedas] = useState();
-  
-  useEffect(() => {
-    axios
-      .get(`${API_URL}assets`)
-      .then((data) => {
-        setcriptomonedas(data.data.data);
-      })
-      .catch(() => {
-        console.error("operación fallida");
-      });
-  }, []);
-
-  
-
-
- 
+  const [criptomonedas] = usePetition("assets");
 
   if (!criptomonedas) return <span>Cargando...</span>;
-
-
 
   return (
     <>
       <div className="grid-container">
-        <div className="titulo"><h1>Lista de criptomonedas</h1></div>
-        
+        <div className="titulo">
+          <h1>Lista de criptomonedas</h1>
+        </div>
+
         <div className="cripto-container">
           {criptomonedas.map(
             ({ id, name, priceUsd, symbol, changePercent24Hr }) => (
